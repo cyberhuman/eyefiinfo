@@ -23,6 +23,7 @@ use warnings;
 
 use Digest::MD5 qw(md5_hex);
 use Encode qw(encode_utf8);
+use URI::Escape qw(uri_escape);
 use LWP::Simple qw(get);
 use XML::Bare;
 use Text::FormatTable;
@@ -54,7 +55,7 @@ sub url
   $map{'api_sig'} = sig(\%map);
   foreach my $key ( keys %map )
   {
-    $url .= '&' . $key . "=" . $map{$key};
+    $url .= '&' . uri_escape($key) . "=" . uri_escape($map{$key});
   }
   $url =~ s/&//;
   return $url;
