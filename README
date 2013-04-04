@@ -1,1 +1,11 @@
 
+The utility requires the following Perl modules:
+    XML::Bare
+    Text::FormatTable
+    IO::Prompt
+
+If you are using Ubuntu, just install the packages listed below:
+    libxml-bare-perl
+    libtext-formattable-perl
+    libio-prompt-perl
+
